@@ -6,10 +6,16 @@ namespace WinformTodo
         {
             InitializeComponent();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+        
+            // where we handle the add event
+            Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(ddb.Text));
+
+            MessageBox.Show(myTodo.ToString());
 
         }
+
+
     }
 }

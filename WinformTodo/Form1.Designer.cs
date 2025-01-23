@@ -31,8 +31,8 @@
             groupBox1 = new GroupBox();
             btnClear = new Button();
             btnAdd = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtDueDate = new TextBox();
+            ddb = new Label();
             lblTaskBoxLable = new Label();
             txtTaskDiscription = new TextBox();
             Gbtasklist = new GroupBox();
@@ -45,8 +45,8 @@
             // 
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnAdd);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtDueDate);
+            groupBox1.Controls.Add(ddb);
             groupBox1.Controls.Add(lblTaskBoxLable);
             groupBox1.Controls.Add(txtTaskDiscription);
             groupBox1.Location = new Point(12, 12);
@@ -73,23 +73,24 @@
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Todo";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // textBox1
+            // txtDueDate
             // 
-            textBox1.Location = new Point(113, 64);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "2025-01-20";
-            textBox1.Size = new Size(219, 31);
-            textBox1.TabIndex = 3;
+            txtDueDate.Location = new Point(113, 64);
+            txtDueDate.Name = "txtDueDate";
+            txtDueDate.PlaceholderText = "2025-01-20";
+            txtDueDate.Size = new Size(219, 31);
+            txtDueDate.TabIndex = 3;
             // 
-            // label1
+            // ddb
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(21, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 25);
-            label1.TabIndex = 2;
-            label1.Text = "Due Date";
+            ddb.AutoSize = true;
+            ddb.Location = new Point(21, 70);
+            ddb.Name = "ddb";
+            ddb.Size = new Size(86, 25);
+            ddb.TabIndex = 2;
+            ddb.Text = "Due Date";
             // 
             // lblTaskBoxLable
             // 
@@ -133,7 +134,7 @@
             Controls.Add(Gbtasklist);
             Controls.Add(groupBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Todo app";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             Gbtasklist.ResumeLayout(false);
@@ -145,8 +146,8 @@
         private GroupBox groupBox1;
         private Label lblTaskBoxLable;
         private TextBox txtTaskDiscription;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtDueDate;
+        private Label ddb;
         private Button btnAdd;
         private Button btnClear;
         private GroupBox Gbtasklist;
