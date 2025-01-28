@@ -26,6 +26,7 @@ namespace WinformTodo
         public override string? ToString()
         {
             return $"{Id} - {DueDate} - {TaskDescription}";
+            //TODO: add stuff to process the form and add it to the list.
         }
     }
 }

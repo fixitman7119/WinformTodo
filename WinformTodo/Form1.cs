@@ -12,28 +12,34 @@ namespace WinformTodo
             // where we handle the add event
             Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(txtDueDate.Text));
 
-            MessageBox.Show(myTodo.ToString());
+            // MessageBox.Show(myTodo.ToString());
 
+            // check if the todo is valid
+            // if it is not display an error
+            // exit
+
+            // take that todo and insert it into my list
+            lvTasksList.Items.Add(myTodo.ToString());
+            
+            ClearForm();
         }
 
-        private void txtTaskDiscription_TextChanged(object sender, EventArgs e)
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            ClearForm();
+            MessageBox.Show("form cleared");
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void ClearForm()
         {
+            txtTaskDiscription.Clear();
+            txtDueDate.Clear();
 
         }
+        
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ddb_Click(object sender, EventArgs e)
-        {
-
-        }
+        
+        
     }
 }

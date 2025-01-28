@@ -57,7 +57,7 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
-            groupBox1.Enter += groupBox1_Enter;
+            
             // 
             // btnClear
             // 
@@ -68,6 +68,7 @@
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnAdd
             // 
@@ -98,7 +99,7 @@
             ddb.Size = new Size(55, 15);
             ddb.TabIndex = 2;
             ddb.Text = "Due Date";
-            ddb.Click += ddb_Click;
+            
             // 
             // lblTaskBoxLable
             // 
@@ -117,7 +118,7 @@
             txtTaskDiscription.Name = "txtTaskDiscription";
             txtTaskDiscription.Size = new Size(154, 23);
             txtTaskDiscription.TabIndex = 0;
-            txtTaskDiscription.TextChanged += txtTaskDiscription_TextChanged;
+            
             // 
             // Gbtasklist
             // 
@@ -150,7 +151,7 @@
             Margin = new Padding(2);
             Name = "Form1";
             Text = "Todo app";
-            Load += Form1_Load;
+            
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             Gbtasklist.ResumeLayout(false);
