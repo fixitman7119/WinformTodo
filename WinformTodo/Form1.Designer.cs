@@ -88,6 +88,7 @@
             txtDueDate.PlaceholderText = "2025-01-20";
             txtDueDate.Size = new Size(154, 23);
             txtDueDate.TabIndex = 3;
+            txtDueDate.KeyPress += Form1_KeyPress;
             // 
             // ddb
             // 
@@ -116,6 +117,8 @@
             txtTaskDiscription.Name = "txtTaskDiscription";
             txtTaskDiscription.Size = new Size(154, 23);
             txtTaskDiscription.TabIndex = 0;
+            txtTaskDiscription.Text = "tst";
+            txtTaskDiscription.KeyPress += Form1_KeyPress;
             // 
             // Gbtasklist
             // 
