@@ -54,7 +54,7 @@
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(236, 100);
+            groupBox1.Size = new Size(319, 100);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
@@ -93,7 +93,7 @@
             // ddb
             // 
             ddb.AutoSize = true;
-            ddb.Location = new Point(15, 42);
+            ddb.Location = new Point(0, 42);
             ddb.Margin = new Padding(2, 0, 2, 0);
             ddb.Name = "ddb";
             ddb.Size = new Size(55, 15);
@@ -103,7 +103,7 @@
             // lblTaskBoxLable
             // 
             lblTaskBoxLable.AutoSize = true;
-            lblTaskBoxLable.Location = new Point(15, 20);
+            lblTaskBoxLable.Location = new Point(0, 21);
             lblTaskBoxLable.Margin = new Padding(2, 0, 2, 0);
             lblTaskBoxLable.Name = "lblTaskBoxLable";
             lblTaskBoxLable.Size = new Size(29, 15);
@@ -128,7 +128,7 @@
             Gbtasklist.Margin = new Padding(2);
             Gbtasklist.Name = "Gbtasklist";
             Gbtasklist.Padding = new Padding(2);
-            Gbtasklist.Size = new Size(236, 177);
+            Gbtasklist.Size = new Size(319, 177);
             Gbtasklist.TabIndex = 1;
             Gbtasklist.TabStop = false;
             Gbtasklist.Text = "Task List";
@@ -137,9 +137,9 @@
             // 
             lbTaskList.FormattingEnabled = true;
             lbTaskList.ItemHeight = 15;
-            lbTaskList.Location = new Point(5, 21);
+            lbTaskList.Location = new Point(0, 10);
             lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(231, 229);
+            lbTaskList.Size = new Size(318, 364);
             lbTaskList.TabIndex = 1;
             // 
             // lvTasksList
@@ -155,7 +155,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(254, 376);
+            ClientSize = new Size(338, 532);
             Controls.Add(Gbtasklist);
             Controls.Add(groupBox1);
             Margin = new Padding(2);
