@@ -36,6 +36,7 @@
             lblTaskBoxLable = new Label();
             txtTaskDiscription = new TextBox();
             Gbtasklist = new GroupBox();
+            lbTaskList = new ListBox();
             lvTasksList = new ListView();
             groupBox1.SuspendLayout();
             Gbtasklist.SuspendLayout();
@@ -57,7 +58,6 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
-            
             // 
             // btnClear
             // 
@@ -79,7 +79,6 @@
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Todo";
             btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
             // 
             // txtDueDate
             // 
@@ -99,7 +98,6 @@
             ddb.Size = new Size(55, 15);
             ddb.TabIndex = 2;
             ddb.Text = "Due Date";
-            
             // 
             // lblTaskBoxLable
             // 
@@ -118,10 +116,10 @@
             txtTaskDiscription.Name = "txtTaskDiscription";
             txtTaskDiscription.Size = new Size(154, 23);
             txtTaskDiscription.TabIndex = 0;
-            
             // 
             // Gbtasklist
             // 
+            Gbtasklist.Controls.Add(lbTaskList);
             Gbtasklist.Controls.Add(lvTasksList);
             Gbtasklist.Location = new Point(8, 111);
             Gbtasklist.Margin = new Padding(2);
@@ -132,12 +130,21 @@
             Gbtasklist.TabStop = false;
             Gbtasklist.Text = "Task List";
             // 
+            // lbTaskList
+            // 
+            lbTaskList.FormattingEnabled = true;
+            lbTaskList.ItemHeight = 15;
+            lbTaskList.Location = new Point(5, 21);
+            lbTaskList.Name = "lbTaskList";
+            lbTaskList.Size = new Size(231, 229);
+            lbTaskList.TabIndex = 1;
+            // 
             // lvTasksList
             // 
             lvTasksList.Location = new Point(0, 18);
             lvTasksList.Margin = new Padding(2);
             lvTasksList.Name = "lvTasksList";
-            lvTasksList.Size = new Size(237, 221);
+            lvTasksList.Size = new Size(0, 0);
             lvTasksList.TabIndex = 0;
             lvTasksList.UseCompatibleStateImageBehavior = false;
             // 
@@ -151,7 +158,7 @@
             Margin = new Padding(2);
             Name = "Form1";
             Text = "Todo app";
-            
+            KeyPress += Form1_KeyPress;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             Gbtasklist.ResumeLayout(false);
@@ -169,5 +176,6 @@
         private Button btnClear;
         private GroupBox Gbtasklist;
         private ListView lvTasksList;
+        private ListBox lbTaskList;
     }
 }

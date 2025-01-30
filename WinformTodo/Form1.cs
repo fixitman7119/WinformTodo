@@ -6,7 +6,7 @@ namespace WinformTodo
         {
             InitializeComponent();
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void submitForm(object sender, EventArgs e)
         {
 
             // where we handle the add event
@@ -19,8 +19,9 @@ namespace WinformTodo
             // exit
 
             // take that todo and insert it into my list
-            lvTasksList.Items.Add(myTodo.ToString());
-            
+            lbTaskList.Items.Add(myTodo.ToString());
+
+
             ClearForm();
         }
 
@@ -28,7 +29,7 @@ namespace WinformTodo
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearForm();
-            MessageBox.Show("form cleared");
+            MessageBox.Show("Form cleared");
         }
 
         private void ClearForm()
@@ -37,9 +38,13 @@ namespace WinformTodo
             txtDueDate.Clear();
 
         }
-        
 
-        
-        
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) 
+            {
+               submitForm(sender, e);
+            }
+        }
     }
 }
