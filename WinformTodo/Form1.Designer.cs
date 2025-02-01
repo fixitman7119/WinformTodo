@@ -137,7 +137,7 @@
             // 
             lbTaskList.FormattingEnabled = true;
             lbTaskList.ItemHeight = 15;
-            lbTaskList.Location = new Point(0, 10);
+            lbTaskList.Location = new Point(0, 21);
             lbTaskList.Name = "lbTaskList";
             lbTaskList.Size = new Size(318, 364);
             lbTaskList.TabIndex = 1;

@@ -1,3 +1,5 @@
+using System.Web;
+
 namespace WinformTodo
 {
     public partial class Form1 : Form
@@ -11,15 +13,23 @@ namespace WinformTodo
         }
         private void SubmitForm(object sender, EventArgs e)
         {
-            // where we handle the add event
-            Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(txtDueDate.Text));
-            // MessageBox.Show(myTodo.ToString());
             // check if the todo is valid
             // if it is not display an error
             // exit
-            if (Validators.IsEmptyText (txtTaskDiscription)) // Discription must exist.  Due date must be formated as a valid date.
+
+
+            // MessageBox.Show(myTodo.ToString());
+
+
+            if (Validators.IsEmptyText(txtTaskDiscription)) // Discription must exist.  Due date must be formated as a valid date.
             {
                 MessageBox.Show("Discription is empty. Please provide a discription.");
+                return;
+            }
+
+            if (Validators.IsTextNull(txtDueDate))
+            {
+                MessageBox.Show("Discripton needs to be created.");
                 return;
             }
 
@@ -27,7 +37,7 @@ namespace WinformTodo
             {
                 MessageBox.Show("Missing a due date.");
                 return;
-                
+
             }
             if (!Validators.IsValidDate(txtDueDate))
             {
@@ -35,19 +45,17 @@ namespace WinformTodo
                 return;
             }
 
-            if(Validators.IsTextNull (txtDueDate))
-            {
-                MessageBox.Show("Discripton needs to be created.");
-                return;
-            }
+
+            // where we handle the add event
+            Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(txtDueDate.Text));
 
             // take that todo and insert it into my list
-           
             TaskList.Add(myTodo);
 
             UpdateListBox();
 
             ClearForm();
+
         }
 
         public void UpdateListBox()
@@ -56,7 +64,8 @@ namespace WinformTodo
             lbTaskList.Items.Clear();
             // transform the list
             var list = TaskList
-            .Where(t => t.IsDone == false)
+            //.Where(t => t.IsDone == false)
+            .OrderBy(t => t.DueDate)
             .ToList();
             // read in the new contents
 
@@ -64,7 +73,7 @@ namespace WinformTodo
             {
                 lbTaskList.Items.Add(list[i].ToString());
             }
-               // do any clean up if required
+            // do any clean up if required
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -88,6 +97,37 @@ namespace WinformTodo
             }
         }
 
-        
+        private void lbTasklist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}"};
+            int selectedIndex = lbTaskList.SelectedIndex;
+            string selectedItem = (string)lbTaskList.SelectedItem;
+
+            if (selectedIndex == -1)
+            {
+                return;
+            }
+
+            if (selectedItem == null)
+            {
+                MessageBox.Show("No item slected at the index.");
+                return;
+            }
+
+            // STRING FORMAT: # - 01-01-2025 -  description - status: comlete
+
+            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
+
+            //find the item in the list with the matching id, toggle its complete status
+            var todo = TaskList.Find(t => t.Id == id);
+
+            if (todo != null)
+            {
+                todo.IsDone = !todo.IsDone;
+                UpdateListBox();
+            }
+
+
+        }
     }
 }

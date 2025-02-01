@@ -31,16 +31,10 @@ namespace WinformTodo
             }
             else
             {
-                status = "status incomplete";
+                status = "status: incomplete";
             }
 
             return status;
-
-
-
-
-
-
         }
 
         public override string? ToString()
