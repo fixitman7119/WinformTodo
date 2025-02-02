@@ -13,15 +13,11 @@ namespace WinformTodo
         }
         private void SubmitForm(object sender, EventArgs e)
         {
-            // check if the todo is valid
-            // if it is not display an error
-            // exit
-
-
+            
             // MessageBox.Show(myTodo.ToString());
 
 
-            if (Validators.IsEmptyText(txtTaskDiscription)) // Discription must exist.  Due date must be formated as a valid date.
+            if (Validators.IsEmptyText(txtTaskDiscription)) 
             {
                 MessageBox.Show("Discription is empty. Please provide a discription.");
                 return;
@@ -44,12 +40,10 @@ namespace WinformTodo
                 MessageBox.Show("Date is incorectly formated.  Please try again.");
                 return;
             }
-
-
-            // where we handle the add event
+      
             Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(txtDueDate.Text));
 
-            // take that todo and insert it into my list
+           
             TaskList.Add(myTodo);
 
             UpdateListBox();
