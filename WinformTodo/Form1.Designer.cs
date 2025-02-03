@@ -79,6 +79,7 @@
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Todo";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += SubmitForm;
             // 
             // txtDueDate
             // 
