@@ -36,7 +36,7 @@
             lblTaskBoxLable = new Label();
             txtTaskDiscription = new TextBox();
             Gbtasklist = new GroupBox();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             lvTasksList = new ListView();
             groupBox1.SuspendLayout();
             Gbtasklist.SuspendLayout();
@@ -61,10 +61,10 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(48, 65);
+            btnClear.Location = new Point(79, 69);
             btnClear.Margin = new Padding(2);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(77, 31);
+            btnClear.Size = new Size(77, 27);
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(129, 65);
+            btnAdd.Location = new Point(234, 65);
             btnAdd.Margin = new Padding(2);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(85, 31);
@@ -87,7 +87,7 @@
             txtDueDate.Margin = new Padding(2);
             txtDueDate.Name = "txtDueDate";
             txtDueDate.PlaceholderText = "2025-01-20";
-            txtDueDate.Size = new Size(154, 23);
+            txtDueDate.Size = new Size(236, 23);
             txtDueDate.TabIndex = 3;
             txtDueDate.KeyPress += Form1_KeyPress;
             // 
@@ -116,14 +116,14 @@
             txtTaskDiscription.Location = new Point(79, 18);
             txtTaskDiscription.Margin = new Padding(2);
             txtTaskDiscription.Name = "txtTaskDiscription";
-            txtTaskDiscription.Size = new Size(154, 23);
+            txtTaskDiscription.Size = new Size(236, 23);
             txtTaskDiscription.TabIndex = 0;
-            txtTaskDiscription.Text = "tst";
+            txtTaskDiscription.Text = "get";
             txtTaskDiscription.KeyPress += Form1_KeyPress;
             // 
             // Gbtasklist
             // 
-            Gbtasklist.Controls.Add(lbTaskList);
+            Gbtasklist.Controls.Add(fpTasks);
             Gbtasklist.Controls.Add(lvTasksList);
             Gbtasklist.Location = new Point(8, 111);
             Gbtasklist.Margin = new Padding(2);
@@ -134,14 +134,14 @@
             Gbtasklist.TabStop = false;
             Gbtasklist.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.ItemHeight = 15;
-            lbTaskList.Location = new Point(0, 21);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(318, 364);
-            lbTaskList.TabIndex = 1;
+            fpTasks.AutoScroll = true;
+            fpTasks.AutoSize = true;
+            fpTasks.Location = new Point(5, 21);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(314, 388);
+            fpTasks.TabIndex = 1;
             // 
             // lvTasksList
             // 
@@ -166,6 +166,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             Gbtasklist.ResumeLayout(false);
+            Gbtasklist.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -180,6 +181,6 @@
         private Button btnClear;
         private GroupBox Gbtasklist;
         private ListView lvTasksList;
-        private ListBox lbTaskList;
+        private FlowLayoutPanel fpTasks;
     }
 }

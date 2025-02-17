@@ -45,6 +45,7 @@ namespace WinformTodo
 
            
             TaskList.Add(myTodo);
+            fpTasks.Controls.Add(new TaskControl(myTodo));
 
             UpdateListBox();
 
@@ -55,7 +56,7 @@ namespace WinformTodo
         public void UpdateListBox()
         {
             // clear the contents of the list box
-            lbTaskList.Items.Clear();
+            //lbTaskList.Items.Clear();
             // transform the list
             var list = TaskList
             //.Where(t => t.IsDone == false)
@@ -65,7 +66,7 @@ namespace WinformTodo
 
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+               // lbTaskList.Items.Add(list[i].ToString());
             }
             // do any clean up if required
         }
@@ -91,37 +92,37 @@ namespace WinformTodo
             }
         }
 
-        private void lbTasklist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}"};
-            int selectedIndex = lbTaskList.SelectedIndex;
-            string selectedItem = (string)lbTaskList.SelectedItem;
+        //private void lbTasklist_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}"};
+        //    //int selectedIndex = lbTaskList.SelectedIndex;
+        //   // string selectedItem = (string)lbTaskList.SelectedItem;
 
-            if (selectedIndex == -1)
-            {
-                return;
-            }
+        //   // if (selectedIndex == -1)
+        //    {
+        //        return;
+        //    }
 
-            if (selectedItem == null)
-            {
-                MessageBox.Show("No item slected at the index.");
-                return;
-            }
+        //    if (selectedItem == null)
+        //    {
+        //        MessageBox.Show("No item slected at the index.");
+        //        return;
+        //    }
 
-            // STRING FORMAT: # - 01-01-2025 -  description - status: comlete
+        //    // STRING FORMAT: # - 01-01-2025 -  description - status: comlete
 
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
+        //    int id = Int32.Parse(selectedItem.Split(" - ")[0]);
 
-            //find the item in the list with the matching id, toggle its complete status
-            var todo = TaskList.Find(t => t.Id == id);
+        //    //find the item in the list with the matching id, toggle its complete status
+        //    var todo = TaskList.Find(t => t.Id == id);
 
-            if (todo != null)
-            {
-                todo.IsDone = !todo.IsDone;
-                UpdateListBox();
-            }
+        //    if (todo != null)
+        //    {
+        //        todo.IsDone = !todo.IsDone;
+        //        UpdateListBox();
+        //    }
 
 
-        }
+        //}
     }
 }
