@@ -38,7 +38,7 @@
             // btnComplete
             // 
             btnComplete.AutoSize = true;
-            btnComplete.Location = new Point(204, 124);
+            btnComplete.Location = new Point(191, 7);
             btnComplete.Name = "btnComplete";
             btnComplete.Size = new Size(99, 25);
             btnComplete.TabIndex = 0;
@@ -76,13 +76,10 @@
             // 
             // lblDescription
             // 
-            lblDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblDescription.AutoSize = true;
             lblDescription.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDescription.Location = new Point(14, 61);
-            lblDescription.MaximumSize = new Size(300, 0);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(276, 60);
+            lblDescription.Size = new Size(359, 89);
             lblDescription.TabIndex = 4;
             lblDescription.Text = "This is a discription of some task that needs to be done.";
             // 
@@ -92,13 +89,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(lblDescription);
             Controls.Add(lblDueDate);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnComplete);
             Name = "TaskControl";
-            Size = new Size(326, 163);
+            Size = new Size(376, 150);
             ResumeLayout(false);
             PerformLayout();
         }

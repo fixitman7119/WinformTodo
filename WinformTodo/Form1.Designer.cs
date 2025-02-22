@@ -79,7 +79,7 @@
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Todo";
             btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += SubmitForm;
+            btnAdd.Click += submitForm;
             // 
             // txtDueDate
             // 
@@ -129,7 +129,7 @@
             Gbtasklist.Margin = new Padding(2);
             Gbtasklist.Name = "Gbtasklist";
             Gbtasklist.Padding = new Padding(2);
-            Gbtasklist.Size = new Size(319, 177);
+            Gbtasklist.Size = new Size(319, 410);
             Gbtasklist.TabIndex = 1;
             Gbtasklist.TabStop = false;
             Gbtasklist.Text = "Task List";
@@ -140,7 +140,7 @@
             fpTasks.AutoSize = true;
             fpTasks.Location = new Point(5, 21);
             fpTasks.Name = "fpTasks";
-            fpTasks.Size = new Size(314, 388);
+            fpTasks.Size = new Size(313, 388);
             fpTasks.TabIndex = 1;
             // 
             // lvTasksList
@@ -162,6 +162,7 @@
             Margin = new Padding(2);
             Name = "Form1";
             Text = "Todo app";
+            Load += Form1_Load;
             KeyPress += Form1_KeyPress;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -14,20 +14,13 @@ namespace WinformTodo
         public string TaskDescription { get; set; }
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
-        public Todo(string description, DateTime date, bool doneState = true)
-        {
-            ObjectCounter++;
-            Id = ObjectCounter;
-            TaskDescription = description;
-            DueDate = date;
-            IsDone = doneState;
-        }
+       
         public string GetStatus()
         {
              string status = "";
             if (IsDone)
             {
-                status = "status complete";
+                status = "status: complete";
             }
             else
             {
@@ -35,6 +28,20 @@ namespace WinformTodo
             }
 
             return status;
+        }
+
+        public Todo()
+        {
+
+        }
+
+        public Todo(string description, DateTime date, bool doneState = false)
+        {
+            ObjectCounter++;
+            Id = ObjectCounter;
+            TaskDescription = description;
+            DueDate = date;
+            IsDone = doneState;
         }
 
         public override string? ToString()

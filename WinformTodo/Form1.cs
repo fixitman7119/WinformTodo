@@ -11,13 +11,13 @@ namespace WinformTodo
             InitializeComponent();
             TaskList = new List<Todo>();
         }
-        private void SubmitForm(object sender, EventArgs e)
+        private void submitForm(object sender, EventArgs e)
         {
-            
-            // MessageBox.Show(myTodo.ToString());
+
+             //MessageBox.Show(myTodo.ToString());
 
 
-            if (Validators.IsEmptyText(txtTaskDiscription)) 
+            if (Validators.IsEmptyText(txtTaskDiscription))
             {
                 MessageBox.Show("Discription is empty. Please provide a discription.");
                 return;
@@ -40,10 +40,10 @@ namespace WinformTodo
                 MessageBox.Show("Date is incorectly formated.  Please try again.");
                 return;
             }
-      
+
             Todo myTodo = new Todo(txtTaskDiscription.Text, DateTime.Parse(txtDueDate.Text));
 
-           
+
             TaskList.Add(myTodo);
             fpTasks.Controls.Add(new TaskControl(myTodo));
 
@@ -66,7 +66,7 @@ namespace WinformTodo
 
             for (int i = 0; i < list.Count; i++)
             {
-               // lbTaskList.Items.Add(list[i].ToString());
+                // lbTaskList.Items.Add(list[i].ToString());
             }
             // do any clean up if required
         }
@@ -88,8 +88,13 @@ namespace WinformTodo
         {
             if (e.KeyChar == 13)
             {
-                SubmitForm(sender, e);
+                submitForm(sender, e);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         //private void lbTasklist_SelectedIndexChanged(object sender, EventArgs e)
